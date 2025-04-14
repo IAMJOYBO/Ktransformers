@@ -44,7 +44,7 @@ RUN CPU_INSTRUCT=${CPU_INSTRUCT} \
     USE_BALANCE_SERVE=1 \
     KTRANSFORMERS_FORCE_BUILD=TRUE \
     TORCH_CUDA_ARCH_LIST="8.0;8.6;8.7;8.9;9.0+PTX" \
-    pip install . --no-build-isolation --verbose
+    pip install . --no-build-isolation --verbose && pip cache purge
 
 RUN pip install third_party/custom_flashinfer/ && pip cache purge
 
