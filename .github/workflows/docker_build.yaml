@@ -38,6 +38,10 @@ jobs:
     - name: 构建和上传Docker镜像
       run: |
         docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action .
-        docker push  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action
+        docker push ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action
+        docker tag  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action ${{ env.server }}/${{ env.own }}/${{ env.repo }}
+        docker push ${{ env.server }}/${{ env.own }}/${{ env.repo }}
     - name: Docker Pull 命令
-      run: echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action"
+      run: | 
+        echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action"
+        echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}"
