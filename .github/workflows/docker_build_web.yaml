@@ -37,7 +37,11 @@ jobs:
         
     - name: 构建和上传Docker镜像
       run: |
-        docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-web -f Dockerfile-web .
-        docker push  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-web
+        docker build -t ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-web .
+        docker push ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-web
+        docker tag  ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-web ${{ env.server }}/${{ env.own }}/${{ env.repo }}:web
+        docker push ${{ env.server }}/${{ env.own }}/${{ env.repo }}:web
     - name: Docker Pull 命令
-      run: echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-web"
+      run: | 
+        echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:${{ steps.date.outputs.date }}-action-web"
+        echo "docker pull ${{ env.server }}/${{ env.own }}/${{ env.repo }}:web"
