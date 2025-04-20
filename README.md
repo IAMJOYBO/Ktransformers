@@ -3,8 +3,8 @@
 ### registry.cn-hangzhou.aliyuncs.com/joybo/ktransformers
 |序号|Tag|构建时间|指令集|PyTorch版本|New|WEB|架构|
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-|01|v2025.04.12-action|2025.4.12|NATIVE|2.6.0+cu126|[最新镜像](https://github.com/IAMJOYBO/ktransformers/actions/workflows/docker_build.yaml)|❌|amd64|
-|02|v2025.04.13-action-web|2025.4.13|NATIVE|2.6.0+cu126|[最新镜像](https://github.com/IAMJOYBO/ktransformers/actions/workflows/docker_build_web.yaml)|✅|amd64|
+|01|v2025.04.12-action|2025.4.12|NATIVE|2.6.0+cu126|[最新镜像](../../actions/workflows/docker_build.yaml)|❌|amd64|
+|02|v2025.04.13-action-web|2025.4.13|NATIVE|2.6.0+cu126|[最新镜像](../../actions/workflows/docker_build_web.yaml)|✅|amd64|
 > PyTorch基础镜像：[https://hub.docker.com/r/pytorch/pytorch/tags](https://hub.docker.com/r/pytorch/pytorch/tags)
 ### Docker Compose 示例（无WEB）
 ```yaml
